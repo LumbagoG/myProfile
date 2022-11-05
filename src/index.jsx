@@ -1,8 +1,13 @@
+// Импорты
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./assets/styles/index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+
+// Компоненты
+import { App } from "./pages/app/App";
+
+// Стили
+import "./assets/styles/index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
