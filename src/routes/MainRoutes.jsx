@@ -7,9 +7,13 @@ import {
     RouterProvider
 } from "react-router-dom";
 
+// Компоненты
+import { Loader } from "../components/loader/Loader";
+
 // Layouts
 import AppLayout from "../layouts/AppLayout";
 
+// Страницы
 const HomePage = lazy(() => import("../pages/home/HomePage"));
 
 /**
@@ -27,7 +31,7 @@ export const MainRoutes = () => {
     );
 
     return (
-        <Suspense fallback={<p>Loading...</p>}>
+        <Suspense fallback={<Loader />}>
             <RouterProvider router={router} />
         </Suspense>
     );

@@ -1,6 +1,10 @@
 // Импорты
 import { Outlet } from "react-router-dom";
 
+// Компоненты
+import { Header } from "../components/header/Header";
+import { Footer } from "../components/footer/Footer";
+
 /**
  * Главны layout приложения
  * @returns {JSX.Element}
@@ -9,13 +13,13 @@ import { Outlet } from "react-router-dom";
 const AppLayout = () => {
     return (
         <>
-            <header>Шапка</header>
+            <Header />
 
             <main>
                 <Outlet />
             </main>
 
-            <footer>Подвал</footer>
+            <Footer />
         </>
     );
 };
