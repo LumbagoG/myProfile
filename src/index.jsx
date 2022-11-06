@@ -7,7 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import { App } from "./pages/app/App";
 
 // Стили
-import "./assets/styles/index.css";
+import "./assets/styles/index.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
