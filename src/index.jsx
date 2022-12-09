@@ -6,9 +6,10 @@ import reportWebVitals from "./reportWebVitals";
 // Компоненты
 import { App } from "./pages/app/App";
 
-// Стили
-import "./assets/styles/index.scss";
-
+/**
+ * Root
+ * @type {Root}
+ */
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
