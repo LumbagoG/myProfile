@@ -12,5 +12,6 @@ export const parameters = {
             hidden: true
         }
     },
-    viewMode: "docs"
+    viewMode: "docs",
+    chromatic: { disableSnapshot: false }
 };
