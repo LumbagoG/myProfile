@@ -1,33 +1,36 @@
 {
-    "name": "my-profile",
-    "version": "0.1.0",
-    "private": false,
+    "name": "@lumbago/react-ts-lib",
+    "version": "0.0.0",
+    "scripts": {
+        "lint": "eslint src//*.{js,jsx,ts,tsx,json} --no-error-on-unmatched-pattern",
+        "lint:fix": "eslint --fix 'src//*.{js,jsx,ts,tsx,json}' --no-error-on-unmatched-pattern",
+        "format": "prettier --write \"src//*.{js,jsx,ts,tsx,css,md,json}\" --config ./.prettierrc",
+        "format:fix": "prettier --fix \"src//*.{js,jsx,ts,tsx,css,md,json}\" --config ./.prettierrc",
+        "dev": "npm run lint && npm run lint:fix && npm run format && npm run format:fix && vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview",
+        "prepack": "json -f package.json -I -e \"delete this.devDependencies; delete this.dependencies\"",
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook"
+    },
     "dependencies": {
-        "@storybook/testing-library": "^0.0.13",
-        "@testing-library/jest-dom": "^5.16.5",
-        "@testing-library/react": "^13.4.0",
-        "@testing-library/user-event": "^13.5.0",
-        "node-sass": "^7.0.3",
-        "postcss": "^8.4.18",
-        "prop-types": "^15.8.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "react-router-dom": "^6.4.3",
-        "react-scripts": "5.0.1",
-        "styled-components": "^5.3.6",
-        "tailwindcss": "^3.2.2",
-        "web-vitals": "^2.1.4"
+        "vite": "^4.1.1",
+        "web-vitals": "^3.1.1"
     },
-    "scripts": {
-        "lint": "eslint .",
-        "lint:fix": "eslint --fix",
-        "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-        "start": "craco start && lint && lint:fix && format",
-        "build": "craco build",
-        "test": "craco test",
-        "eject": "react-scripts eject",
-        "storybook": "start-storybook -p 6006 -s public",
-        "build-storybook": "build-storybook -s public"
+    "license": "MIT",
+    "files": [
+        "dist"
+    ],
+    "main": "./build/react-ts-lib.umd.js",
+    "module": "./build/react-ts-lib.es.js",
+    "types": "./build/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./build/react-ts-lib.es.js",
+            "require": "./build/react-ts-lib.umd.js"
+        }
     },
     "eslintConfig": {
         "extends": [
@@ -37,7 +40,7 @@
         "overrides": [
             {
                 "files": [
-                    "**/*.stories.*"
+                    "/*.stories.*"
                 ],
                 "rules": {
                     "import/no-anonymous-default-export": "off"
@@ -45,51 +48,14 @@
             }
         ]
     },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
+    "description": "",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/LumbagoG/myReactTsLib.git"
     },
-    "devDependencies": {
-        "@craco/craco": "^7.0.0",
-        "@storybook/addon-a11y": "^6.5.13",
-        "@storybook/addon-actions": "^6.5.13",
-        "@storybook/addon-docs": "^6.5.13",
-        "@storybook/addon-essentials": "^6.5.13",
-        "@storybook/addon-interactions": "^6.5.13",
-        "@storybook/addon-links": "^6.5.13",
-        "@storybook/addon-measure": "^6.5.13",
-        "@storybook/addon-storysource": "^6.5.13",
-        "@storybook/addon-viewport": "^6.5.13",
-        "@storybook/addons": "^6.5.13",
-        "@storybook/builder-webpack5": "^6.5.13",
-        "@storybook/manager-webpack5": "^6.5.0-rc.1",
-        "@storybook/node-logger": "^6.5.13",
-        "@storybook/preset-create-react-app": "^4.1.2",
-        "@storybook/react": "^6.5.13",
-        "@storybook/theming": "^6.5.13",
-        "@tailwindcss/typography": "^0.5.8",
-        "autoprefixer": "^10.4.13",
-        "babel-plugin-named-exports-order": "^0.0.2",
-        "chromatic": "^6.11.4",
-        "eslint": "^8.26.0",
-        "eslint-config-airbnb": "^19.0.4",
-        "eslint-config-prettier": "^8.5.0",
-        "eslint-plugin-import": "^2.26.0",
-        "eslint-plugin-jsx-a11y": "^6.6.1",
-        "eslint-plugin-prettier": "^4.2.1",
-        "eslint-plugin-react": "^7.31.10",
-        "eslint-plugin-react-hooks": "^4.6.0",
-        "eslint-plugin-storybook": "^0.6.7",
-        "prettier": "^2.7.1",
-        "prettier-plugin-tailwindcss": "^0.1.13",
-        "storybook-preset-craco": "^0.0.6"
-    }
+    "author": "lumbago",
+    "bugs": {
+        "url": "https://github.com/LumbagoG/myReactTsLib/issues"
+    },
+    "homepage": "https://github.com/LumbagoG/myReactTsLib#readme"
 }
